@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = process.env.PORT || 3025
+const PORT = process.env.PORT || 5432
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Audrey Hepburn API!')
