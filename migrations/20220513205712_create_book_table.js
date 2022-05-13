@@ -1,15 +1,18 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = function(knex) {
-  
+exports.up = function(knex, Promise) {
+  return knex.schema.createTable('book', table => {
+    table.varchar('id');
+    table.varchar('title');
+    table.varchar('author');
+    table.integer('releaseYear');
+    table.integer('pages');
+    table.text('cover');
+    table.text('summary');
+    table.text('link');
+    table.varchar('ISBN')
+    table.varchar('media');
+  })
 };
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
 exports.down = function(knex) {
-  
+  return knex.schema.dropTableIfExists('book')
 };
